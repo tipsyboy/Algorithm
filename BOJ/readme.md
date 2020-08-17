@@ -13,6 +13,7 @@
 [[10869]](https://www.acmicpc.net/problem/10869) 
 [[10430]](https://www.acmicpc.net/problem/10430) 
 [[2588]](https://www.acmicpc.net/problem/2588) 
+>
 풀이 : [[2557]](./step/01_입출력과%20사칙연산/1_2557.py)
 [[10718]](./step/01_입출력과%20사칙연산/2_10718.py)
 [[10171]](./step/01_입출력과%20사칙연산/3_10171.py)
