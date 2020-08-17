@@ -2,7 +2,7 @@
 ### 단계별로 풀어보기 
 
 1. 입출력과 사칙연산
-- 문제 : [[2557]](https://www.acmicpc.net/problem/2557) 
+> 문제 : [[2557]](https://www.acmicpc.net/problem/2557) 
 [[10718]](https://www.acmicpc.net/problem/10718) 
 [[10171]](https://www.acmicpc.net/problem/10171) 
 [[10172]](https://www.acmicpc.net/problem/10172) 
@@ -13,3 +13,5 @@
 [[10869]](https://www.acmicpc.net/problem/10869) 
 [[10430]](https://www.acmicpc.net/problem/10430) 
 [[2588]](https://www.acmicpc.net/problem/2588) 
+>
+풀이 : [[2557]](./step/01_입출력과%20사칙연산/10_10430.py)
