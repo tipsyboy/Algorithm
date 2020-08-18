@@ -26,3 +26,16 @@
 [[10430]](./step/01_입출력과%20사칙연산/10_10430.py)
 [[2588]](./step/01_입출력과%20사칙연산/11_2588.py)
 >
+2. if문
+> 문제 : [[1330]](https://www.acmicpc.net/problem/1330) 
+[[9498]](https://www.acmicpc.net/problem/9498) 
+[[2753]](https://www.acmicpc.net/problem/2753) 
+[[14681]](https://www.acmicpc.net/problem/14681) 
+[[2884]](https://www.acmicpc.net/problem/2884) 
+>
+> 풀이 : [[1330]](./step/02_if문/1_1330.py)
+[[9498]](./step/02_if문/2_9498.py)
+[[2753]](./step/02_if문/3_2753.py)
+[[14681]](./step/02_if문/4_14681.py)
+[[2884]](./step/02_if문/5_2884.py)
+>
