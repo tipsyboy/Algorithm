@@ -1,4 +1,4 @@
 # Algorithm practice
 
-## BOJ
+## BAEKJOON ONLINE JUDGE
 [[BOJ]](./BOJ)
