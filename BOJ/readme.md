@@ -65,3 +65,11 @@
 [[2438]](./step/03_for문/9_2438.py)
 [[2439]](./step/03_for문/10_2439.py)
 [[10871]](./step/03_for문/11_10871.py) 
+
+4. while문
+> 문제 : [[10952]](https://www.acmicpc.net/problem/10952) 
+[[10951]](https://www.acmicpc.net/problem/10951) 
+[[1110]](https://www.acmicpc.net/problem/1110) 
+> 풀이 : [[10952]](./step/04_while문/1_10952.py)
+[[10951]](./step/04_while문/2_10951.py)
+[[1110]](./step/04_while문/3_1110.py)
