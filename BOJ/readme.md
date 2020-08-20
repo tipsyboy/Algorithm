@@ -41,7 +41,7 @@
 [[2884]](./step/02_if문/5_2884.py)
 >
 
-3. [[for문]](https://www.acmicpc.net/step/3)   
+3. for문
 > 문제 : [[2739]](https://www.acmicpc.net/problem/2739) 
 [[10950]](https://www.acmicpc.net/problem/10950) 
 [[8393]](https://www.acmicpc.net/problem/8393) 
