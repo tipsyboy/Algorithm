@@ -74,3 +74,20 @@
 > 풀이 : [[10952]](./step/04_while문/1_10952.py)
 [[10951]](./step/04_while문/2_10951.py)
 [[1110]](./step/04_while문/3_1110.py)
+
+5. 1차원 배열
+> 문제 : [[10818]](https://www.acmicpc.net/problem/10818)
+[[2562]](https://www.acmicpc.net/problem/2562)
+[[2577]](https://www.acmicpc.net/problem/2577)
+[[3052]](https://www.acmicpc.net/problem/3052)
+[[1546]](https://www.acmicpc.net/problem/1546)
+[[8958]](https://www.acmicpc.net/problem/8958)
+[[4344]](https://www.acmicpc.net/problem/4344)
+>
+> 풀이 : [[10818]](./step/05_1차원%20배열/01_10818.py)
+[[2562]](./step/05_1차원%20배열/02_2562.py)
+[[2577]](./step/05_1차원%20배열/03_2577.py)
+[[3052](./step/05_1차원%20배열/04_3052.py)
+[[1546](./step/05_1차원%20배열/05_1546.py)
+[[8958](./step/05_1차원%20배열/06_8958.py)
+[[4344]](./step/05_1차원%20배열/07_4344.py)
