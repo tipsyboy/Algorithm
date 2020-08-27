@@ -123,3 +123,16 @@
 [[5622]](./step/07_문자열/08_5622.py)
 [[2941]](./step/07_문자열/09_2941.py)
 [[1316]](./step/07_문자열/10_1316.py)
+
+8. 수학1
+> 문제 : [[1712]](https://www.acmicpc.net/problem/1712)
+[[2839]](https://www.acmicpc.net/problem/2839)
+[[2292]](https://www.acmicpc.net/problem/2292)
+[[1193]](https://www.acmicpc.net/problem/1193)
+[[2869]](https://www.acmicpc.net/problem/2869)
+>
+> 풀이 : [[1712]](./step/08_수학1/01_1712.py)
+[[2839]](./step/08_수학1/02_2839.py)
+[[2292]](./step/08_수학1/03_2292.py)
+[[1193]](./step/08_수학1/04_1193.py)
+[[2869]](./step/08_수학1/05_2869.py)
