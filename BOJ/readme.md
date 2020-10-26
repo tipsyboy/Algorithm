@@ -130,9 +130,16 @@
 [[2292]](https://www.acmicpc.net/problem/2292)
 [[1193]](https://www.acmicpc.net/problem/1193)
 [[2869]](https://www.acmicpc.net/problem/2869)
+[[10250]](https://www.acmicpc.net/problem/10250)
+[[2775]](https://www.acmicpc.net/problem/2775)
+[[1011]](https://www.acmicpc.net/problem/1011)
+
 >
 > 풀이 : [[1712]](./step/08_수학1/01_1712.py)
 [[2839]](./step/08_수학1/02_2839.py)
 [[2292]](./step/08_수학1/03_2292.py)
 [[1193]](./step/08_수학1/04_1193.py)
 [[2869]](./step/08_수학1/05_2869.py)
+[[10250]](./step/08_수학1/06_10250.py)
+[[2775]](./step/08_수학1/07_2775.py)
+[[1011]](./step/08_수학1/08_1011.py)
