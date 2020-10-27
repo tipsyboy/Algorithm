@@ -133,7 +133,6 @@
 [[10250]](https://www.acmicpc.net/problem/10250)
 [[2775]](https://www.acmicpc.net/problem/2775)
 [[1011]](https://www.acmicpc.net/problem/1011)
-
 >
 > 풀이 : [[1712]](./step/08_수학1/01_1712.py)
 [[2839]](./step/08_수학1/02_2839.py)
@@ -143,3 +142,31 @@
 [[10250]](./step/08_수학1/06_10250.py)
 [[2775]](./step/08_수학1/07_2775.py)
 [[1011]](./step/08_수학1/08_1011.py)
+
+9. 수학2
+> 문제 : [[1978]](https://www.acmicpc.net/problem/1978)
+[[2581]](https://www.acmicpc.net/problem/2581)
+[[1929]](https://www.acmicpc.net/problem/1929)
+[[4948]](https://www.acmicpc.net/problem/4948)
+[[9020]](https://www.acmicpc.net/problem/9020)
+[[1085]](https://www.acmicpc.net/problem/1085)
+[[3009]](https://www.acmicpc.net/problem/3009)
+[[4153]](https://www.acmicpc.net/problem/4153)
+[[3053]](https://www.acmicpc.net/problem/3053)
+[[1002]](https://www.acmicpc.net/problem/1002)
+>
+> 풀이 : [[1978]](./step/09_수학2/01_1978.py)
+[[2581]](./step/09_수학2/02_2581.py)
+[[1929]](./step/09_수학2/03_1929.py)
+[[4948]](./step/09_수학2/04_4948.py)
+[[9020]](./step/09_수학2/05_9020.py)
+[[1085]](./step/09_수학2/06_1085.py)
+[[3009]](./step/09_수학2/07_3009.py)
+[[4153]](./step/09_수학2/08_4153.py)
+[[3053]](./step/09_수학2/09_3053.py)
+[[1002]](./step/09_수학2/10_1002.py)
+
+10. 재귀
+> 문제 : [[10872]](https://www.acmicpc.net/problem/10872)
+>
+> 풀이 : [[10872]](./step/10_재귀/01_10872.py)
