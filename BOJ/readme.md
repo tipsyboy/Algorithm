@@ -168,5 +168,7 @@
 
 10. 재귀
 > 문제 : [[10872]](https://www.acmicpc.net/problem/10872)
+[[10870]](https://www.acmicpc.net/problem/10870)
 >
 > 풀이 : [[10872]](./step/10_재귀/01_10872.py)
+[[10870]](./step/10_재귀/02_10870.py)
