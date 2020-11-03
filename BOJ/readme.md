@@ -180,6 +180,10 @@
 11. 브루트포스
 > 문제 : [[2798]](https://www.acmicpc.net/problem/2798)
 [[2231]](https://www.acmicpc.net/problem/2231)
+[[7568]](https://www.acmicpc.net/problem/7568)
+[[1018]](https://www.acmicpc.net/problem/1018)
 >
 > 풀이 : [[2798]](./step/11_브루트포스/01_2798.py)
 [[2231]](./step/11_브루트포스/02_2231.py)
+[[7568]](./step/11_브루트포스/03_7568.py)
+[[1018]](./step/11_브루트포스/04_1018.py)
