@@ -41,8 +41,8 @@ def bubble_sort(unsorted_list):
     copy_list = copy.deepcopy(unsorted_list)
     n = len(copy_list)
 
-    for i in range(n - 1):
-        for j in range(i, n - 1):
+    for i in range(n - 1, 0, -1):
+        for j in range(i):
             if copy_list[j] > copy_list[j + 1]:
                 copy_list[j], copy_list[j + 1] = copy_list[j + 1], copy_list[j]
 
