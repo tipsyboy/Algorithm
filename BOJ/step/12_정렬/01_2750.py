@@ -38,7 +38,11 @@ def bubble_sort(unsorted, N):
 
 N = int(sys.stdin.readline())  # 수의 개수ㅡ
 unsorted_list = [int(sys.stdin.readline()) for i in range(N)]  # 리스트 입력 받음
-print(bubble_sort(unsorted_list, N))
+
+selection_sort(unsorted_list, N)
+
+for elem in unsorted_list:
+    print(elem)
 
 # # 2)
 # import sys
