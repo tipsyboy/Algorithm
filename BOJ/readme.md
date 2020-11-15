@@ -189,3 +189,30 @@
 [[7568]](./step/11_브루트포스/03_7568.py)
 [[1018]](./step/11_브루트포스/04_1018.py)
 [[1436]](./step/11_브루트포스/05_1436.py)
+
+12. 정렬
+> 문제 : [[2750]](https://www.acmicpc.net/problem/2750)
+[[2751]](https://www.acmicpc.net/problem/2751)
+[[10989]](https://www.acmicpc.net/problem/10989)
+[[2108]](https://www.acmicpc.net/problem/2108)
+[[1427]](https://www.acmicpc.net/problem/1427)
+[[11650]](https://www.acmicpc.net/problem/11650)
+[[11651]](https://www.acmicpc.net/problem/11651)
+[[1181]](https://www.acmicpc.net/problem/1181)
+[[10814]](https://www.acmicpc.net/problem/10814)
+>
+> 풀이 : [[2750]](./step/12_정렬/01_2750.py)
+[[2751]](./step/12_정렬/02_2751.py)
+[[10989]](./step/12_정렬/03_10989.py)
+[[2108]](./step/12_정렬/04_2108.py)
+[[1427]](./step/12_정렬/05_1427.py)
+[[11650]](./step/12_정렬/06_11650.py)
+[[11651]](./step/12_정렬/07_11651.py)
+[[1181]](./step/12_정렬/08_1181.py)
+[[10814]](./step/12_정렬/09_10814.py)
+
+12. 정렬
+> 문제 : [[15649]](https://www.acmicpc.net/problem/15649)
+>
+> 풀이 : [[15649]](./step/13_백트래킹/01_15649.py)
+
