@@ -213,6 +213,8 @@
 
 13. 백트래킹
 > 문제 : [[15649]](https://www.acmicpc.net/problem/15649)
+[[15650]](https://www.acmicpc.net/problem/15650)
 >
 > 풀이 : [[15649]](./step/13_백트래킹/01_15649.py)
+ [[15650]](./step/13_백트래킹/02_15650.py)
 
