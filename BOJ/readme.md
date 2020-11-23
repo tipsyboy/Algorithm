@@ -219,6 +219,7 @@
 [[9663]](https://www.acmicpc.net/problem/9663)
 [[2580]](https://www.acmicpc.net/problem/2580)
 [[14888]](https://www.acmicpc.net/problem/14888)
+[[14889]](https://www.acmicpc.net/problem/14889)
 >
 > 풀이 : [[15649]](./step/13_백트래킹/01_15649.py)
  [[15650]](./step/13_백트래킹/02_15650.py)
@@ -227,4 +228,5 @@
  [[9663]](./step/13_백트래킹/05_9663.py)
  [[2580]](./step/13_백트래킹/06_2580.py)
  [[14888]](./step/13_백트래킹/07_14888.py)
+ [[14889]](./step/13_백트래킹/08_14889.py)
 
