@@ -232,7 +232,9 @@
 
  14. 동적계획법
 > 문제 : [[2748]](https://www.acmicpc.net/problem/2748)
+[[1003]](https://www.acmicpc.net/problem/1003)
 >
 > 풀이 : [[2748]](./step/14_동적계획법/01_2748.py)
+[[1003]](./step/14_동적계획법/02_1003.py)
 
 
