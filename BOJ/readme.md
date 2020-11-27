@@ -234,9 +234,11 @@
 > 문제 : [[2748]](https://www.acmicpc.net/problem/2748)
 [[1003]](https://www.acmicpc.net/problem/1003)
 [[1904]](https://www.acmicpc.net/problem/1904)
+[[9461]](https://www.acmicpc.net/problem/9461)
 >
 > 풀이 : [[2748]](./step/14_동적계획법/01_2748.py)
 [[1003]](./step/14_동적계획법/02_1003.py)
 [[1904]](./step/14_동적계획법/03_1904.py)
+[[1904]](./step/14_동적계획법/04_9461.py)
 
 
