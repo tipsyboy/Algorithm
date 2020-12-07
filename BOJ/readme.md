@@ -238,6 +238,13 @@
 [[1149]](https://www.acmicpc.net/problem/1149)
 [[1932]](https://www.acmicpc.net/problem/1932)
 [[2579]](https://www.acmicpc.net/problem/2579)
+[[1463]](https://www.acmicpc.net/problem/1463)
+[[10844]](https://www.acmicpc.net/problem/10844)
+[[2156]](https://www.acmicpc.net/problem/2156)
+[[11053]](https://www.acmicpc.net/problem/11053)
+[[11054]](https://www.acmicpc.net/problem/11054)
+[[2565]](https://www.acmicpc.net/problem/2565)
+[[9251]](https://www.acmicpc.net/problem/9251)
 >
 > 풀이 : [[2748]](./step/14_동적계획법/01_2748.py)
 [[1003]](./step/14_동적계획법/02_1003.py)
@@ -246,5 +253,12 @@
 [[1149]](./step/14_동적계획법/05_1149.py)
 [[1932]](./step/14_동적계획법/06_1932.py)
 [[2579]](./step/14_동적계획법/07_2579.py)
+[[1463]](./step/14_동적계획법/08_1463.py)
+[[10844]](./step/14_동적계획법/09_10844.py)
+[[2156]](./step/14_동적계획법/10_2156.py)
+[[11053]](./step/14_동적계획법/11_11053.py)
+[[11054]](./step/14_동적계획법/12_11054.py)
+[[2565]](./step/14_동적계획법/13_2565.py)
+[[9251]](./step/14_동적계획법/14_9251.py)
 
 
