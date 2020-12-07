@@ -45,5 +45,5 @@ for i in range(n):
 
     dp[i] = dp_max + 1  # i-1까지의 LIS에 나를 추가
 
-print(dp)
+# print(dp)
 print(max(dp))
