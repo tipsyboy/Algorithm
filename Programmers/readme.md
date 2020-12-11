@@ -4,9 +4,11 @@
 1. level 1
 > 문제 :
 [[두개 뽑아서 더하기]](https://programmers.co.kr/learn/courses/30/lessons/68644)
+[[크레인 인형뽑기 게임]](https://programmers.co.kr/learn/courses/30/lessons/64061)
 >
 > 풀이 :
-[[풀이]](./step/01_level1/두개뽑아서더하기.py)
+[[두개 뽑아서 더하기]](./step/01_level1/두개뽑아서더하기.py)
+[[크레인 인형뽑기 게임]](./step/01_level1/크레인인형뽑기게임.py)
 >
 
 
