@@ -1,4 +1,3 @@
-
 # ### 1. 첫번째 풀이
 # def solution(participant, completion):
 #     participant.sort()
@@ -10,7 +9,8 @@
 
 #     return participant[i+1]
 
-# 2. collections 모듈의 Counter 클래스 사용
+
+# ### 2. collections 모듈의 Counter 클래스 사용
 import collections
 
 
@@ -22,12 +22,12 @@ def solution(participant, completion):
     return answer
 
 
-x = solution(["leo", "kiki", "eden"],
-             ["eden", "kiki"])
+x = solution(["leo", "kiki", "eden"], ["eden", "kiki"])
 
-y = solution(["marina", "josipa", "nikola", "vinko", "filipa"],
-             ["josipa", "filipa", "marina", "nikola"])
-z = solution(["mislav", "stanko", "mislav", "ana"],
-             ["stanko", "ana", "mislav"])
+y = solution(
+    ["marina", "josipa", "nikola", "vinko", "filipa"],
+    ["josipa", "filipa", "marina", "nikola"],
+)
+z = solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])
 
 # print(x, y, z)
