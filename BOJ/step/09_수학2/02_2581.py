@@ -21,7 +21,7 @@ def is_Prime_2(num):
 
     x = int(sqrt(num))
 
-    for i in range(2, x+1):
+    for i in range(2, x + 1):
         if num % i == 0:
             return False
 
@@ -33,7 +33,7 @@ N = int(sys.stdin.readline())
 
 prime_list = []
 
-for number in range(M, N+1):
+for number in range(M, N + 1):
     if is_Prime_2(number):
         prime_list.append(number)
 

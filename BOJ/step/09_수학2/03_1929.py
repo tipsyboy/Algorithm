@@ -24,11 +24,11 @@
 
 # 2. 에라토스테네스의 체 (Sieve of Eratosthenes) + 제곱수 이용
 def Eratos(M, N):
-    prime_number = [False, False] + [True] * (N-1)  # list 생성 (체 생성)
+    prime_number = [False, False] + [True] * (N - 1)  # list 생성 (체 생성)
 
-    for i in range(2, int(N**0.5) + 1):  # 제곱근까지 검증
+    for i in range(2, int(N ** 0.5) + 1):  # 제곱근까지 검증
         if prime_number[i]:  # 체에 걸러지지 않은 수인 경우에,
-            for j in range(2*i, N+1, i):  # 자신을 제외한 배수를 모두
+            for j in range(2 * i, N + 1, i):  # 자신을 제외한 배수를 모두
                 prime_number[j] = False  # 제거한다.
 
     return prime_number  # 리스트를 리턴
@@ -37,6 +37,6 @@ def Eratos(M, N):
 # 출력
 M, N = map(int, input().split())
 x = Eratos(M, N)
-for i in range(M, N+1):
+for i in range(M, N + 1):
     if x[i]:
         print(i)
