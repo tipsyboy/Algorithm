@@ -7,9 +7,9 @@ def solution(a, b):
     #     b += month[i]
 
     # 2
-    b += sum(month[:a-1])
+    b += sum(month[: a - 1])
 
-    return day_names[b % 7-1]
+    return day_names[b % 7 - 1]
 
 
 # ### 2. 모듈이용

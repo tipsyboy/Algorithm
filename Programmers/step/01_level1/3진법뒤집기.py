@@ -12,7 +12,7 @@ def solution(n):
     base3_digit = len(base3_reverse) - 1
 
     for idx, b in enumerate(base3_reverse):
-        ans += b * (3**(base3_digit-idx))
+        ans += b * (3 ** (base3_digit - idx))
 
     return ans
 

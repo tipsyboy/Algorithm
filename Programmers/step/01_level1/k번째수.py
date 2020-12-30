@@ -18,7 +18,7 @@ def solution_2(array, commands):
     for command in commands:
         start, end, k = command
 
-        answer.append(sorted(array[start-1:end])[k-1])
+        answer.append(sorted(array[start - 1 : end])[k - 1])
 
     return answer
 

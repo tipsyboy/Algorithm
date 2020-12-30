@@ -1,14 +1,12 @@
-
-
 # 1. 틀린 답 - 반례
 def solution(n, lost, reserve):
     for stu in reserve:
         if stu in lost:
             lost.remove(stu)
-        elif stu-1 in lost:
-            lost.remove(stu-1)
-        elif stu+1 in lost:
-            lost.remove(stu+1)
+        elif stu - 1 in lost:
+            lost.remove(stu - 1)
+        elif stu + 1 in lost:
+            lost.remove(stu + 1)
 
     ans = n - len(lost)
 
@@ -26,13 +24,13 @@ def solution(n, lost, reserve):
 def solution_2(n, lost, reserve):
     # [도난o + 여분o]의 경우를 먼저 전처리
     reserve_set = set(reserve) - set(lost)
-    lost_set = set(lost)-set(reserve)
+    lost_set = set(lost) - set(reserve)
 
     for stu in reserve_set:
-        if stu-1 in lost_set:
-            lost_set.remove(stu-1)
-        elif stu+1 in lost_set:
-            lost_set.remove(stu+1)
+        if stu - 1 in lost_set:
+            lost_set.remove(stu - 1)
+        elif stu + 1 in lost_set:
+            lost_set.remove(stu + 1)
 
     return n - len(lost_set)
 

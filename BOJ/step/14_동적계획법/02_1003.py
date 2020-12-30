@@ -14,9 +14,9 @@ for i in range(test_case):
         continue
 
     if fibo_lst[n]:  # 미리 구해놔서 리스트에 존재하면
-        print(fibo_lst[n-1], fibo_lst[n])
+        print(fibo_lst[n - 1], fibo_lst[n])
     else:  # 존재 안하면 새로 구함
-        for j in range(2, n+1):
-            fibo_lst[j] = fibo_lst[j-2] + fibo_lst[j-1]
+        for j in range(2, n + 1):
+            fibo_lst[j] = fibo_lst[j - 2] + fibo_lst[j - 1]
 
-        print(fibo_lst[n-1], fibo_lst[n])
+        print(fibo_lst[n - 1], fibo_lst[n])
