@@ -19,7 +19,7 @@
 
 # 2) indexing
 n, k = map(int, input().split())
-people = [x for x in range(1, n+1)]
+people = [x for x in range(1, n + 1)]
 
 idx = 0
 rst = []

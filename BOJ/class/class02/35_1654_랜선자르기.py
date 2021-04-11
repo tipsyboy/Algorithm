@@ -1,4 +1,5 @@
 import sys
+
 input = sys.stdin.readline
 
 k, n = map(int, input().split())
@@ -20,14 +21,14 @@ def cut_lan(lan, n, start, end):
     #     # rst.append(1)
     #     return
     lines = 0
-    for l in lan:
-        lines += l // mid
+    for la in lan:
+        lines += la // mid
 
     if lines >= n:
         rst.append(mid)
         cut_lan(lan, n, mid + 1, end)
     else:
-        cut_lan(lan, n, start, mid-1)
+        cut_lan(lan, n, start, mid - 1)
 
 
 cut_lan(lan, n, 1, max(lan))
