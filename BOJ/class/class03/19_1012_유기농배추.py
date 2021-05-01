@@ -68,8 +68,9 @@ for _ in range(t):
         q.append(cabbages.pop())
 
         while q:
-            x, y = q.popleft()
+            x, y = q.popleft()  # 현재 위치
 
+            # 4방향 이동
             for i in range(4):
                 nx = x + dx[i]
                 ny = y + dy[i]
