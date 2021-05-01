@@ -75,11 +75,12 @@ for _ in range(t):
                 nx = x + dx[i]
                 ny = y + dy[i]
 
+                # 맵 넘어가는거 찾는 조건 없어도 되지 않을까? 어차피 맵에 있는 좌표인데,
                 if nx >= 0 and nx < m and ny >= 0 and ny < n:
                     if (nx, ny) in cabbages:
                         q.append((nx, ny))
                         cabbages.remove((nx, ny))
 
-        count += 1
+        count += 1  # 배추 지렁이 +1
 
     print(count)
