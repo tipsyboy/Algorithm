@@ -17,6 +17,7 @@ def solution1():
         graph[a].append(b)
         graph[b].append(a)
 
+    # bfs 
     q = deque()
     count = 0
     for i in range(1, len(visited)):
