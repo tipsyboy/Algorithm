@@ -1,36 +1,38 @@
 import sys
 input = sys.stdin.readline
 
-# 현재 위치는 100
-target = int(input())  # target
-m = int(input())  # 고장난 버튼의 개수
-button = set(map(str, input().split()))
+target = int(input())  # target number
+m = int(input())  # 고장난 버튼의 수
+button = set(map(str, input().split()))  # 고장난 버튼
 
-# 1) +, -로만 이동
-rst = abs(target - 100)
+# 1) +, - 버튼만을 사용해서 target number를 찾는 경우
+rst = abs(target - 100)  # 채널의 시작 번호가 100
 
-# 2) 최대 근접수까지 가서 아랫번호에서 올라가기
-# temp = target
-for i in range(target, -1, -1):
-    flag = True
-    for num in str(i):
+# 2) target보다 낮은 수에서 +를 누르면서 찾는 경우
+for channel in range(target, -1, -1):  # 채널은 0번부터 있음
+    flag = True  # 이중 for 탈출
+    for num in str(channel):
         if num in button:
             flag = False
             break
     if flag:
-        rst = min(rst, abs(target - i) + len(str(i)))
+        rst = min(rst, len(str(channel)) + target - channel)
+        break
 
-# 3) 최대 근접수에서 내리기
-for i in range(target, 1000001):
+# 3) target보다 높은 수에서 -를 누르면서 찾는 경우
+# target channel의 범위가 50만까지고 채널은 무한대 개수이므로 50만보다 높은 수의 채널에서 내리면서 찾는 경우가 이득일 때도 있다.
+for channel in range(target, 1000001):
     flag = True
-    for num in str(i):
+    for num in str(channel):
         if num in button:
             flag = False
             break
     if flag:
-        rst = min(rst, abs(target - i) + len(str(i)))
+        rst = min(rst, len(str(channel)) + channel - target)
+        break
 
 print(rst)
+
 
 """
 43. 1107 리모컨 (gold 5)
