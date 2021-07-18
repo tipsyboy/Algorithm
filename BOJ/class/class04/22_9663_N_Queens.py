@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 
 def promising(row):
-
     for i in range(row):
         # if col[row] == col[i]: # 열 검사인데 visited를 통해서 삭제한다.
         #     return False
