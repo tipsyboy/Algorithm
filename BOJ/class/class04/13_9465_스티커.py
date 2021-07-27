@@ -2,10 +2,13 @@ import sys
 input = sys.stdin.readline
 
 t = int(input())
-
 for _ in range(t):
     n = int(input())
     sticker = [list(map(int, input().split())) for _ in range(2)]
+
+    if n == 1:
+        print(max(sticker[0][0], sticker[1][0]))
+        continue
 
     sticker[0][1] = sticker[0][1] + sticker[1][0]
     sticker[1][1] = sticker[1][1] + sticker[0][0]
@@ -37,4 +40,8 @@ for _ in range(t):
 
     - dp에서 바텀업 방식에 대해서는 현재 i항에 집중해서 현재 i항이 들어갈 수 있는가 없는가를
       중점적으로 보는게 맞는것 같다. 
+
+
+    - 07.27.2021 백준 재채점 결과를 수정해서 다시 제출하였다. 
+      n == 1에 대한 예외처리가 없어서 런타임 에러가 나는게 문제였고, 조건을 추가해서 해결했다. 
 """
