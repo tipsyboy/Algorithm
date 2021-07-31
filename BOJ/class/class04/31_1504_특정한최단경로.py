@@ -1,5 +1,6 @@
 import sys
 from heapq import heappush, heappop
+
 input = sys.stdin.readline
 INF = int(1e9)
 
@@ -15,6 +16,7 @@ def dijkstra(start):
         now_dist, now_node = heappop(pq)
 
         # 간선 비용이 -는 아닐테니까 현재 dist 값이 더 작으면 계산할 필요가 없음
+        # 간선 비용이 -인 경우는 벨만-포드 알고리즘을 사용한다.
         if dist[now_node] < now_dist:
             continue
 
