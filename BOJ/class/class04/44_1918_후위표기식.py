@@ -7,6 +7,7 @@ rst = ""
 stack = []  # 연산자 stack
 priority = set(("*", "/"))  # 사칙연산 연산자 우선순위
 
+
 for exp in expression:
     if exp.isalpha():  # 피연산자의 경우 바로 추가한다.
         rst += exp
