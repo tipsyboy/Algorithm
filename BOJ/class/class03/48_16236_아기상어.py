@@ -1,4 +1,3 @@
-
 # # 1)
 # import sys
 # from collections import deque
@@ -90,6 +89,7 @@
 # 2) 단일 bfs()로 처리하기
 import sys
 from collections import deque
+
 input = sys.stdin.readline
 
 
