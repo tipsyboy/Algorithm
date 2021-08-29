@@ -1,11 +1,14 @@
 import sys
 
 n, m, k = map(int, sys.stdin.readline().split())
-num = list(map(int, sys.stdin.readline().split()))
+numbers = list(map(int, sys.stdin.readline().split()))
 
-num.sort()
-q = m // k
-r = m % k
-rst = q * (num[-1] * k) + (num[-2] * r)
+numbers.sort()
 
-print(rst)
+first = numbers[-1]
+second = numbers[-2]
+
+q = m // (k + 1)
+r = m % (k + 1)
+
+print(q * (first * k + second) + r * first)
