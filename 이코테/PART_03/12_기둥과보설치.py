@@ -1,119 +1,91 @@
-# 2020 카카오 블라인드 1차
-# 기둥과 보 설치
+import sys
+
+input = sys.stdin.readline
 
 
-# demo 버전 빌딩을 받아서 현재 빌딩이 가능한 건축물인가를 판단한다.
-def possible_demo(building):
-    for demo in building:
-        x, y, stuff = demo
-
-        # 건축물이 기둥인 경우
-        if stuff == 0:
+def possible(building):
+    for x, y, a in building:
+        # 구조물이 기둥
+        if a == 0:
             if (
-                y == 0  # 땅에 기둥을 설치
-                or [x, y - 1, 0] in building  # 기둥위에 기둥을 설치
-                or [x - 1, y, 1] in building  # 보 위에 기둥을 설치
-                or [x, y, 1] in building  # 보 위에 기둥을 설치
+                y == 0
+                or (x, y - 1, 0) in building
+                or (x - 1, y, 1) in building
+                or (x, y, 1) in building
+            ):
+                continue
+            return False
+        # 구조물이 보
+        elif a == 1:
+            if (
+                (x, y - 1, 0) in building
+                or (x + 1, y - 1, 0) in building
+                or ((x - 1, y, 1) in building and (x + 1, y, 1) in building)
             ):
                 continue
 
             return False
 
-        # 건축물이 보인 경우
-        else:
-            if (
-                [x, y - 1, 0] in building  # 기둥 위에 보를 설치
-                or [x + 1, y - 1, 0] in building  # 기둥 위에 보를 설치
-                or ([x - 1, y, 1] in building and [x + 1, y, 1] in building)  # 보와 보를 연결
-            ):
-                continue
-
-            return False
-
-    return True  # 가능한 건축물이면 True
+    return True
 
 
-def solution(n, build_frame):
-    building = []  # 건축물을 저장한다.
+def solution(n, build_frames):
+    building = set()
 
-    # 빌드 프레임에서 하나씩 커맨드를 꺼내서
-    for frame in build_frame:
-        x, y, stuff, command = frame
+    for frame in build_frames:
+        x, y, a, b = frame  # 이번 프레임을 받아온다.
 
-        # 건축/삭제 판단 하고
-        # list(건축물 저장)에 추가 또는 삭제를 진행한다.
-        if command == 1:  # 건물을 설치
-            building.append([x, y, stuff])
-            # 그 건축물이 존재할 수 있는지 검사한 후에
-            if not possible_demo(building):
-                building.remove([x, y, stuff])  # 존재 할 수 없는 건축물이면 list(건축물 저장)에서 뺀다.
-        else:  # 건물을 삭제하는 경우 command == 0
-            building.remove([x, y, stuff])
-            # 건축물 존재 가능 여부
-            if not possible_demo(building):
-                building.append([x, y, stuff])  # 가능하지 않으면 다시 설치
+        # 구조물을 설치
+        if b == 1:
+            building.add((x, y, a))
 
-    return sorted(building)
+            # 구조물이 가능하지 않으면 다시 원상 복구
+            if not possible(building):
+                building.remove((x, y, a))
+        # 구조물을 제거
+        elif b == 0:
+            if (x, y, a) in building:
+                building.remove((x, y, a))
 
+                # 구조물이 가능하지 않으면 다시 원상 복구
+                if not possible(building):
+                    building.add((x, y, a))
 
-#####
-# set() 자료형으로 바꾸면
-# 탐색과 추가, 삭제에 걸리는 시간이 O(1)이기 때문에 훨씬 속도가 빨라진다.
+    rst = []
+    for data in building:
+        rst.append(list(data))
 
+    rst.sort(key=lambda x: (x[0], x[1], x[2]))
 
-# # 2020 카카오 블라인드 1차
-# # 기둥과 보 설치
-
-
-# # demo 버전 빌딩을 받아서 현재 빌딩이 가능한 건축물인가를 판단한다.
-# def possible_demo(building):
-#     for demo in building:
-#         x, y, stuff = demo
-
-#         # 건축물이 기둥인 경우
-#         if stuff == 0:
-#             if (
-#                 y == 0  # 땅에 기둥을 설치
-#                 or (x, y - 1, 0) in building  # 기둥위에 기둥을 설치
-#                 or (x - 1, y, 1) in building  # 보 위에 기둥을 설치
-#                 or (x, y, 1) in building  # 보 위에 기둥을 설치
-#             ):
-#                 continue
-
-#             return False
-
-#         # 건축물이 보인 경우
-#         else:
-#             if (
-#                 (x, y - 1, 0) in building  # 기둥 위에 보를 설치
-#                 or (x + 1, y - 1, 0) in building  # 기둥 위에 보를 설치
-#                 or ((x - 1, y, 1) in building and (x + 1, y, 1) in building)  # 보와 보를 연결
-#             ):
-#                 continue
-
-#             return False
-
-#     return True  # 가능한 건축물이면 True
+    return rst
 
 
-# def solution(n, build_frame):
-#     building = set()  # 건축물을 저장한다.
+n = 5
+build_frames = [
+    [1, 0, 0, 1],
+    [1, 1, 1, 1],
+    [2, 1, 0, 1],
+    [2, 2, 1, 1],
+    [5, 0, 0, 1],
+    [5, 1, 0, 1],
+    [4, 2, 1, 1],
+    [3, 2, 1, 1],
+]
 
-#     # 빌드 프레임에서 하나씩 커맨드를 꺼내서
-#     for frame in build_frame:
-#         x, y, stuff, command = frame
+print(solution(n, build_frames))
 
-#         # 건축/삭제 판단 하고
-#         # list(건축물 저장)에 추가 또는 삭제를 진행한다.
-#         if command == 1:  # 건물을 설치
-#             building.add((x, y, stuff))
-#             # 그 건축물이 존재할 수 있는지 검사한 후에
-#             if not possible_demo(building):
-#                 building.remove((x, y, stuff))  # 존재 할 수 없는 건축물이면 list(건축물 저장)에서 뺀다.
-#         else:  # 건물을 삭제하는 경우 command == 0
-#             building.remove((x, y, stuff))
-#             # 건축물 존재 가능 여부
-#             if not possible_demo(building):
-#                 building.add((x, y, stuff))  # 가능하지 않으면 다시 설치
 
-#     return sorted(list(building))
+"""
+12. 기둥과 보 설치 
+    - 기둥, 보의 설치 정보를 어떻게 저장할 것인가?
+      
+      기둥과 보는 설치 방향이 정해져 있기 때문에 (시작하는 위치 좌표, 구조물)를 가지고 있으면 된다.
+
+    - 차례로 현재 설치/삭제될 구조물을 추가/제거한 후에 가능한지에 대해서 전부 검사한다. 
+
+    - set() 자료형 사용의 정당성
+      
+      처음엔 set()은 순서가 보장되지 않기 때문에 설치 순서에 따라서 결과물이 달라지는 이번 문제에 대해서 사용할 수 없을 것이라고 생각했으나,
+      build_frames 자체는 순서대로 들어오고, 그때마다 현재 건물의 상태에 현재 구조물을 추가/제거 할 수 있느냐만 검사하는 것이기 때문에
+      set()을 사용할 수 있다.
+"""
