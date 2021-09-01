@@ -1,77 +1,89 @@
-n = int(input())  # n * n 맵
-k = int(input())  # 사과 개수
+import sys
+from collections import deque
 
-data = [[0] * n for _ in range(n)]  # 맵 정보
-change_direction = []
+input = sys.stdin.readline
 
-# 사과 정보 입력 받기
-for _ in range(k):
-    x, y = map(int, input().split())
-    data[x - 1][y - 1] = 1
 
-# 회전 정보를 입력 받는다.
-cd = int(input())
-for _ in range(cd):
-    sec, d = input().split()
-    change_direction.append((int(sec), d))
-
-# 이동 방향 바꾸기 [동, 남, 서, 북]
+# 뱀의 방향 (동, 남, 서, 북 순서) 90도씩 이동하기 위해
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
-direction = 0  # 처음에 동쪽을 바라보고 있는 뱀
+
+# init input data
+n = int(input())  # map 크기
+graph = [[0] * n for _ in range(n)]  # map
+
+apple = int(input())  # 사과 수
+for _ in range(apple):
+    row, col = map(int, input().split())  # 사과의 좌표
+
+    graph[row - 1][col - 1] = 9  # 사과를 9로 표시
+
+m = int(input())  # 방향 변환 정보 수
+command = deque()
+for _ in range(m):
+    x, c = map(str, input().split())
+    command.append((int(x), c))
 
 
-# 방향 바꾸기 함수
-def turn(direction, c):
-    if c == "L":
-        direction = (direction - 1) % 4
-    else:
-        direction = (direction + 1) % 4
-
-    return direction
+def turn_direction(direction, com):
+    if com == "L":
+        return (direction - 1) % 4
+    elif com == "D":
+        return (direction + 1) % 4
 
 
-def simulate():
-    x, y = 0, 0  # 뱀의 첫 위치 - (1, 1)이라서 0, 0으로 함
-    data[x][y] = 2  # 뱀이 존재하는 위치는 2로 함
-    direction = 0
-    time = 0  # 시간
-    index = 0  # 다음에 회전할 정보 - change direction
-    q = [(x, y)]  # 뱀이 차지하고 있는 위치 (꼬리가 앞쪽이다.)
+def simulation(command, sx, sy, direction):
+    time = 0  # 지나간 시간
+    graph[sx][sy] = 1  # 뱀은 1로 표시
+    snake = deque()  # *** 뱀이 있는 좌표들 - deque()이므로 0번 data가 꼬리의 좌표가 된다.
+    snake.append((sx, sy))  #
 
+    # simulation
     while True:
-        # 다음에 이동할 위치를 계산한다. next_x, next_y
-        nx = x + dx[direction]
-        ny = y + dy[direction]
+        # 방향 이동 - 방향 정보가 남아있고, command가 time 과 일치하는 경우
+        if command and command[0][0] == time:
+            direction = turn_direction(direction, command.popleft()[1])
 
-        # 맵을 나가지 않고 and 자신의 몸통과 부딪히지 않아야 한다.
-        # (이동을 할 수 있다)
-        if 0 <= nx and nx <= n - 1 and 0 <= ny and ny <= n - 1 and data[nx][ny] != 2:
-            # 사과가 없는 경우
-            if data[nx][ny] == 0:
-                data[nx][ny] = 2
-                q.append((nx, ny))  # 머리 추가
-                px, py = q.pop(0)  # 꼬리 꺼내서
-                data[px][py] = 0  # 꼬리 이동
-            elif data[nx][ny] == 1:  # 사과 있음
-                data[nx][ny] = 2
-                q.append((nx, ny))
-        else:  # 이동 못함
-            time += 1  # 이번 이동 시간 +1
-            break
+        # 다음 머리 좌표
+        nx = sx + dx[direction]
+        ny = sy + dy[direction]
 
-        x, y = nx, ny  # 다음 위치로 머리를 이동한다.
+        # 게임이 끝나는 경우
+        if nx < 0 or nx >= n or ny < 0 or ny >= n or graph[nx][ny] == 1:
+            return time + 1  # 부딪치기까지 time을 쓰므로 + 1
+
+        # 사과가 없다. - 꼬리 당겨오기
+        if graph[nx][ny] != 9:
+            x, y = snake.popleft()
+            graph[x][y] = 0
+
+        #
+        graph[nx][ny] = 1  # 머리 이동
+        snake.append((nx, ny))  # 뱀에 늘어난 길이 추가
+        sx, sy = nx, ny  # 머리 좌표 변경
         time += 1  # 시간 증가
 
-        # 시간 증가후에 회전할 시간이면 회전한다.
-        if index < cd and time == change_direction[index][0]:
-            direction = turn(direction, change_direction[index][1])
-            index += 1
 
-    return time
+print(simulation(command, 0, 0, 0))
 
 
-print(simulate())
+"""
+11. 뱀 boj 3190.
+    - 문제의 조건이 아주 친절하게 나와 있어서 그대로 진행하면 되지만, 
+      뱀이 사과를 먹지 않았을때, 꼬리를 당겨오는 부분을 잠시 생각해야한다.
+
+      처음에는 꼬리의 좌표 값을 따로 저장해서 graph에서 꼬리 좌표 값을 0으로 바꿔주는 방식을 생각했으나, 
+      이렇게 하면 다음 꼬리가 되는 좌표를 지정할 수 가 없다 (연결되있지 않다!)
+      따라서 뱀을 연결리스트의 종류로 표현해야 하는데, 뱀의 꼬리의 경우 가장 먼저 들어온 값으로 
+      가장 먼저 나가야한다. 따라서 큐를 사용해서 뱀을 표현하고 사과를 먹으므로써 늘어난 뱀의 머리를 큐에 집어 넣고
+      사과를 먹지 못했을때, 당겨오는 꼬리의 좌표를 큐로 빼내면 된다.
+
+    - 시간 값 리턴 부분에서 time + 1을 리턴하는 이유는 부딪치기 까지도 시간을 소비하기 때문이다. 
+
+    - python의 경우 -1 % 4의 값은 3이다. 따라서 방향을 L로 바꿀때 현재 방향이 0인 경우
+      조건 분기를 통하지 않고 그냥 계산해도 값이 잘 나온다. 
+"""
+
 
 # test case
 # 6
