@@ -1,88 +1,63 @@
+import sys
 from itertools import combinations
 
+input = sys.stdin.readline
 
-# 학생 발견하기
-def watch(x, y, direction):
-    # 검사해서 S를 찾으면 True
-    # 못찾으면 False를 리턴한다.
-
-    if direction == 0:  # 상
-        while True:
-            if x < 0 or board[x][y] == "O":
-                return False
-            elif board[x][y] == "S":
-                return True
-
-            x -= 1
-    elif direction == 1:  # 하
-        while True:
-            if x >= n or board[x][y] == "O":
-                return False
-            elif board[x][y] == "S":
-                return True
-
-            x += 1
-    elif direction == 2:  # 좌
-        while True:
-            if y < 0 or board[x][y] == "O":
-                return False
-            elif board[x][y] == "S":
-                return True
-
-            y -= 1
-    elif direction == 3:
-        while True:
-            if y >= n or board[x][y] == "O":
-                return False
-            elif board[x][y] == "S":
-                return True
-
-            y += 1
+n = int(input())
+graph = []
+teachers = []
+empty_space = []
 
 
-def check_map():
-    for x, y in teachers:
-        for direction in range(4):
-            # 학생을 찾은 경우
-            if watch(x, y, direction):
-                return False
+def check(graph, teachers):
+    dx = [-1, 1, 0, 0]
+    dy = [0, 0, -1, 1]
+
+    for teacher in teachers:
+        x, y = teacher
+
+        for i in range(4):
+            for j in range(1, n):
+                nx = x + dx[i] * j
+                ny = y + dy[i] * j
+
+                if nx < 0 or nx >= n or ny < 0 or ny >= n:  # 이 방향 볼때 맵 넘어가면
+                    break
+                if graph[nx][ny] == "O":  # 이 방향에 장애물 발견
+                    break
+                if graph[nx][ny] == "S":
+                    return False
 
     return True
 
 
-def solution():
-    # 1. 벽을 3개 추가한 맵을 생성
-    for candidate in combinations(empty, 3):
-        for x, y in candidate:
-            board[x][y] = "O"
+def set_obstacle(graph, empty_space, teachers):
+    for obstacle_set in combinations(empty_space, 3):
 
-        # 2. 1.에서 생성한 이번 맵 검사
-        if check_map():  # 안 들키는 맵을 찾음
+        for x, y in obstacle_set:
+            graph[x][y] = "O"
+
+        if check(graph, teachers):
             return True
 
-        for x, y in candidate:
-            board[x][y] = "X"
+        for x, y in obstacle_set:
+            graph[x][y] = "X"
 
     return False
 
 
-n = int(input())
-board = []
-teachers = []
-empty = []
-
 for i in range(n):
-    temp = list(input().split())
+    temp = list(map(str, input().split()))
 
     for j in range(n):
-        if temp[j] == "T":
+        if temp[j] == "X":
+            empty_space.append((i, j))
+        elif temp[j] == "T":
             teachers.append((i, j))
-        elif temp[j] == "X":
-            empty.append((i, j))
 
-    board.append(temp)
+    graph.append(temp)
 
-if solution():
+if set_obstacle(graph, empty_space, teachers):
     print("YES")
 else:
     print("NO")
