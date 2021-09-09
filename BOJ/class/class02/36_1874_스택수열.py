@@ -1,47 +1,50 @@
-# # 1) 첫 번째 코드 (통과)
+# 1)
 # import sys
+
 # input = sys.stdin.readline
 
 # n = int(input())
-# seq = [int(input()) for _ in range(n)]
-# rst = []  # push/pop 저장 list result
-# stack = []  # stack에 들어가 있는 수
-# idx = 1  # 현재 뽑아야 하는 수
+# seq = []
+# for _ in range(n):
+#     seq.append(int(input()))
 
-# while idx < n+1:
+# rst = ""
+# stack = []
+# now = 1  # 현재 번호
+# idx = 0  # seq index
+
+# while now < n + 1:
 #     if not stack:
-#         rst.append("+")
-#         stack.append(idx)
-#         idx += 1
+#         stack.append(now)
+#         now += 1
+#         rst += "+"
 #         continue
 
-#     if stack[-1] == seq[0]:
-#         rst.append("-")
-#         stack.pop()
-#         seq.pop(0)
+#     if stack[-1] != seq[idx]:
+#         stack.append(now)
+#         rst += "+"
+#         now += 1
 #     else:
-#         stack.append(idx)
-#         rst.append("+")
+#         stack.pop()
+#         rst += "-"
 #         idx += 1
 
-
+# # 남은 stack 처리
 # flag = True
-# for _ in range(len(seq)):
-#     if stack.pop() == seq[0]:
-#         rst.append("-")
-#         seq.pop(0)
+# for i in range(idx, n):
+#     if stack.pop() == seq[i]:
+#         rst += "-"
 #     else:
 #         flag = False
-#         break
 
 # if flag:
 #     print("\n".join(rst))
 # else:
 #     print("NO")
 
-
 # 2)
 import sys
+
 input = sys.stdin.readline
 
 n = int(input())
