@@ -2,37 +2,41 @@ import sys
 
 input = sys.stdin.readline
 
-t = int(input())
 
-
-for _ in range(t):
-    # input data
-    n, m = map(int, input().split())
-    arr = list(map(int, input().split()))
-
-    # 2차원 배열로 옮기기
-    dp = [[0] * m for _ in range(n)]
-
+def solution(gold):
+    graph = [[0] * m for _ in range(n)]
     for i in range(n):
         for j in range(m):
-            dp[i][j] = arr[m * i + j]
+            graph[i][j] = gold[i * m + j]
 
+    # print(graph)
     for j in range(1, m):
         for i in range(n):
             if i == 0:
-                dp[i][j] = max(dp[i][j - 1], dp[i + 1][j - 1]) + dp[i][j]
+                graph[i][j] = max(graph[0][j - 1], graph[1][j - 1]) + graph[i][j]
             elif i == n - 1:
-                dp[i][j] = max(dp[i][j - 1], dp[i - 1][j - 1]) + dp[i][j]
+                graph[i][j] = max(graph[i][j - 1], graph[i - 1][j - 1]) + graph[i][j]
             else:
-                dp[i][j] = (
-                    max(dp[i][j - 1], dp[i - 1][j - 1], dp[i + 1][j - 1]) + dp[i][j]
+                graph[i][j] = (
+                    max(graph[i][j - 1], graph[i - 1][j - 1], graph[i + 1][j - 1])
+                    + graph[i][j]
                 )
 
+    # print(graph)
     rst = 0
     for i in range(n):
-        rst = max(rst, dp[i][m - 1])
+        rst = max(rst, graph[i][m - 1])
 
-    print(rst)
+    return rst
+
+
+tc = int(input())
+for _ in range(tc):
+    n, m = map(int, input().split())
+    gold = list(map(int, input().split()))
+
+    print(solution(gold))
+
 
 """
 # test case
