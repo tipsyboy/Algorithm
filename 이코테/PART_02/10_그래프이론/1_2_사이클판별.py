@@ -6,14 +6,14 @@ def find_parent(parent, x):
     return parent[x]
 
 
-def union_parent(parent, x, y):
-    x = find_parent(parent, x)
-    y = find_parent(parent, y)
+def union_parent(parent, a, b):
+    a = find_parent(parent, a)
+    b = find_parent(parent, b)
 
-    if x > y:
-        parent[x] = y
+    if a > b:
+        parent[a] = b
     else:
-        parent[y] = x
+        parent[b] = a
 
 
 v, e = map(int, input().split())  # node 갯수, 간선 개수(union 연산 수)
@@ -23,17 +23,17 @@ parent = [0] * (v + 1)  # 부모 테이블 초기화
 for i in range(1, v + 1):
     parent[i] = i
 
+
 cycle = False  # cycle check
-
 for i in range(e):
-    x, y = map(int, input().split())
+    a, b = map(int, input().split())
 
-    # 서로소 집합이 아니면 (둘이 같은 집합이면 == 같은 루트노드를 갖고 있으면)
-    if find_parent(parent, x) == find_parent(parent, y):
+    # 유니온 이전에 이미 연결되어 있다는 뜻이니 사이클이 발생했다고 볼 수 있다.
+    if find_parent(parent, a) == find_parent(parent, b):
         cycle = True
         break
     else:  # cycle이 발생하지 않았다면 union 연산
-        union_parent(parent, x, y)
+        union_parent(parent, a, b)
 
 if cycle:
     print("사이클이 발생했습니다.")
