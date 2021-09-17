@@ -4,9 +4,9 @@ from collections import deque
 # 노드의 개수와 간선 수 입력
 v, e = map(int, input().split())
 # 모든 노드에 대한 진입차수를 초기화
-indegree = [0] * (v+1)
+indegree = [0] * (v + 1)
 # 각 노드에 연결된 간선 정보를 담기 위한 그래프 초기화 (인접리스트)
-graph = [[] for i in range(v+1)]
+graph = [[] for i in range(v + 1)]
 
 # 간선 정보를 입력 받는다.
 for _ in range(e):
@@ -22,7 +22,7 @@ def topology_sort():
     q = deque()  # 큐 정의
 
     # 처음에는 진입차수가 0인 노드만 큐에 삽입
-    for i in range(1, v+1):
+    for i in range(1, v + 1):
         if indegree[i] == 0:
             q.append(i)
 
@@ -44,14 +44,15 @@ def topology_sort():
 
 topology_sort()
 
-
-# # test case
-# 7 8
-# 1 2
-# 1 5
-# 2 3
-# 2 6
-# 3 4
-# 4 7
-# 5 6
-# 6 4
+"""
+test case
+7 8
+1 2
+1 5
+2 3
+2 6
+3 4
+4 7
+5 6
+6 4
+"""
