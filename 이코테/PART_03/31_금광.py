@@ -17,10 +17,7 @@ def solution(gold):
             elif i == n - 1:
                 graph[i][j] = max(graph[i][j - 1], graph[i - 1][j - 1]) + graph[i][j]
             else:
-                graph[i][j] = (
-                    max(graph[i][j - 1], graph[i - 1][j - 1], graph[i + 1][j - 1])
-                    + graph[i][j]
-                )
+                graph[i][j] = max(graph[i][j - 1], graph[i - 1][j - 1], graph[i + 1][j - 1]) + graph[i][j]
 
     # print(graph)
     rst = 0
