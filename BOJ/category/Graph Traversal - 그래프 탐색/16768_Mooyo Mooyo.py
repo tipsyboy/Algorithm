@@ -73,5 +73,5 @@ for i in range(N):
 
 """
 16768. Mooyo Mooyo
-    - bfs + 구현
+    - bfs + 구현임
 """
