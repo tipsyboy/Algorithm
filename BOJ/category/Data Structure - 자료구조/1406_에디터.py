@@ -14,7 +14,7 @@ for _ in range(M):
             back.append(front.pop())
     elif command[0] == "D":
         if back:
-            stk1.append(back.pop())
+            front.append(back.pop())
     elif command[0] == "B":
         if front:
             front.pop()
