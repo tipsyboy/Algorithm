@@ -49,3 +49,11 @@ arr = list(map(int, input().split()))
 x = int(input())
 print(arr_solution(N, arr, x))
 print(two_pointer(N, arr, x))
+
+
+"""
+3273. 두 수의 합
+    - 주어진 수열에서 두 수의 합이 x가 되는 순서쌍 (p, q)를 구하는 문제
+
+    - 처음에 투 포인터로 해결했지만, 단순 배열로도 해결할 수 있다. 
+"""
