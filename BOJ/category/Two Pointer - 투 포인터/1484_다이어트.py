@@ -1,5 +1,5 @@
 # https://www.acmicpc.net/problem/1484
-# 2022-08-08 MON
+# 2022-08-13 Sat
 
 import sys
 
