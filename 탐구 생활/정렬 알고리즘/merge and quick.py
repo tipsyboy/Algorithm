@@ -34,7 +34,44 @@ def merge_sort(arr: list) -> None:
     msort(0, len(arr))
 
 
+def quick_sort(arr: list) -> None:
+    def partition(start: int, end: int) -> int:
+        pivot = arr[start]
+        left, right = start + 1, end - 1
+
+        while True:
+            while left <= right and arr[left] <= pivot:
+                left += 1
+            while left <= right and arr[right] >= pivot:
+                right -= 1
+
+            if left > right:
+                break
+            arr[left], arr[right] = arr[right], arr[left]
+
+        arr[start], arr[right] = arr[right], arr[start]
+
+        return right
+
+    def qsort(start: int, end: int) -> None:
+        if end - start <= 1:
+            return
+
+        pivot = partition(start, end)
+        qsort(start, pivot)
+        qsort(pivot + 1, end)
+
+    qsort(0, len(arr))
+
+
+# merge sort
 test_arr = [6, -8, 1, 12, 8, 15, 7, -7]
 print("og:", test_arr)
 merge_sort(test_arr)
 print("sorting:", test_arr)
+
+# quick sort
+test_arr2 = [6, -8, 1, 12, 8, 3, 7, -7]
+print("og:", test_arr2)
+quick_sort(test_arr2)
+print("sorting:", test_arr2)
