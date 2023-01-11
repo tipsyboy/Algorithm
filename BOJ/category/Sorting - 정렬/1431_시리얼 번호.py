@@ -1,24 +1,27 @@
+# https://www.acmicpc.net/problem/1431
+
 import sys
 
 input = sys.stdin.readline
 
 
-def condition2(number: str) -> int:
+def compare_numbers(serial: str) -> int:
     sumv = 0
-    for num in number:
-        if num.isnumeric():
-            sumv += int(num)
+    for elem in serial:
+        if not elem.isnumeric():
+            continue
+        sumv += int(elem)
 
     return sumv
 
 
 N = int(input())
-serial_numbers = []
+serials = []
 for _ in range(N):
-    serial_numbers.append(input().rstrip())
+    serials.append(input().rstrip())
 
-serial_numbers.sort(key=lambda x: (len(x), condition2(x), x))
-print("\n".join(serial_numbers))
+serials.sort(key=lambda x: (len(x), compare_numbers(x), x))
+print("\n".join(serials))
 
 
 """
