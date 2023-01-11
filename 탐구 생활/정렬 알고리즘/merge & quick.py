@@ -1,5 +1,5 @@
 def merge_sort(arr: list) -> None:
-    def merge(start: int, end: int):
+    def merge(start: int, end: int) -> None:
         mid = (start + end) // 2
         left, right = start, mid
 
