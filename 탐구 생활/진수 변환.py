@@ -5,7 +5,7 @@
 """
 
 
-def convert_numeral_system(number: int, base: int):
+def convert_numeral_system(number: int, base: int) -> str:
     T = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     q, r = divmod(number, base)
