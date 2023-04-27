@@ -19,6 +19,10 @@ def OOB(x: int, y: int) -> bool:
     return True if x < 0 or x >= 8 or y < 0 or y >= 8 else False
 
 
+def nxt_pos(pos: tuple, com: str) -> tuple:
+    return (pos[0] + directions[com][0], pos[1] + directions[com][1])
+
+
 k, s, N = input().split()
 king = (8 - int(k[1]), ord(k[0]) - 65)
 stone = (8 - int(s[1]), ord(s[0]) - 65)
@@ -26,14 +30,14 @@ stone = (8 - int(s[1]), ord(s[0]) - 65)
 for _ in range(int(N)):
     com = input().rstrip()
 
-    nx, ny = king[0] + directions[com][0], king[1] + directions[com][1]
+    nx, ny = nxt_pos(king, com)
 
     if OOB(nx, ny):
         continue
 
     # move stone
     if (nx, ny) == stone:
-        snx, sny = stone[0] + directions[com][0], stone[1] + directions[com][1]
+        snx, sny = nxt_pos(stone, com)
 
         if OOB(snx, sny):
             continue
