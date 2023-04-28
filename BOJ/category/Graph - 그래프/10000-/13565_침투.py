@@ -128,8 +128,7 @@ for i in range(N):
 print("YES" if bfs(start) else "NO")
 
 
-
 """
 13565. 침투
-    - 실버에 시간 너무씀 걍 bfs로 때리는게 나았을듯
+    - dfs 스택구현 할려다가 실버에 시간 너무씀 걍 bfs로 때리는게 나았을듯
 """
