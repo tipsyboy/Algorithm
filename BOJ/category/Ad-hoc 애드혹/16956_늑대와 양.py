@@ -1,5 +1,11 @@
 # https://www.acmicpc.net/problem/16956
 
+"""
+16956. 늑대와 양
+    - 이게 정해가 맞는지는 모르겠지만 늑대 주변을 몽땅 막았다.
+"""
+
+
 import sys
 
 input = sys.stdin.readline
