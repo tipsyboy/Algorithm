@@ -5,21 +5,20 @@ import sys
 input = sys.stdin.readline
 
 TC = int(input())
+answer = []
 for _ in range(TC):
     n = int(input())
-    pk1 = input().split()
-    pk2 = input().split()
-    ct = input().split()
+    public1 = list(input().split())
+    public2 = list(input().split())
+    cipher = list(input().split())
 
-    S2P = dict()
-    for i in range(n):
-        S2P[pk1[i]] = i
-    P2S = [0] * n
-    for i in range(n):
-        P2S[i] = S2P[pk2[i]]
+    p1_dict = {word: i for i, word in enumerate(public1)}
+    to_go = {i: p1_dict[word] for i, word in enumerate(public2)}
 
     ans = [None] * n
     for i in range(n):
-        ans[P2S[i]] = ct[i]
+        ans[to_go[i]] = cipher[i]
 
-    print(" ".join(ans))
+    answer.append(" ".join(ans))
+
+print(*answer, sep="\n")
