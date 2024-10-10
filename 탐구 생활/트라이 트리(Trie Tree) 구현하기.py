@@ -1,3 +1,10 @@
+"""
+# Last Modified. 2024.10.10 THU
+# 트라이 트리(Trie Tree) 구현하기.py
+
+"""
+
+
 # Node class
 class Node:
     def __init__(self, key, data=None):

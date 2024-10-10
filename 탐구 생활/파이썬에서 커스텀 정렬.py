@@ -1,7 +1,10 @@
 """
-- 정렬 기준을 함수로 작성해서 커스텀 정렬을 수행 할 수 있다.
+# Last Modified. 2024.10.10 THU
+# 파이썬에서 커스텀 정렬
 
-- 참조 문제: https://www.acmicpc.net/problem/1431
+# ref. https://www.acmicpc.net/problem/1431
+
+- 정렬 기준을 함수로 작성해서 커스텀 정렬을 수행 할 수 있다.
 """
 
 import sys
