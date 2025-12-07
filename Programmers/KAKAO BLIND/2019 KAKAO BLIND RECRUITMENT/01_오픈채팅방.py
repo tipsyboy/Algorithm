@@ -1,4 +1,3 @@
-# Dec 3, Wed 2025
 # https://school.programmers.co.kr/learn/courses/30/lessons/42888
 
 from collections import defaultdict
